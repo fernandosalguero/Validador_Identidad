@@ -19,7 +19,7 @@
             border: none;
             outline: none;
             background: #fff;
-            border-bottom: 2px solid #ccc;
+            border-bottom: 2px solid rgb(2, 0, 111);
             border-radius: 0;
             box-shadow: none;
             text-align: center;
@@ -28,7 +28,7 @@
 
 
         .input:focus {
-            border-bottom: 2px solid rgb(0, 42, 255);
+            border-bottom: 2px solid rgb(255, 0, 238);
         }
 
         .boton {
@@ -106,8 +106,8 @@
 
     <div class="container">
         <section class="caja_form">
-            <input type="text" id="dni" placeholder="Coloca el DNI del cliente" autocomplete="off" class="input required"
-                maxlength="9"> <br> <br>
+            <input type="text" id="dni" placeholder="Coloca el DNI del cliente" autocomplete="off"
+                class="input required" maxlength="9"> <br> <br>
             <input type="text" id="fc" placeholder="Coloca la fecha de nacimiento del cliente" class="input required"
                 autocomplete="off" maxlength="6"> <br> <br>
             <input type="text" id="fv" placeholder="Coloca la fecha de vencimiento del DNI" class="input required"
@@ -139,16 +139,17 @@
 
     <!-- SCRIPT -->
     <script>
+        function getData() {
+            let dni = document.getElementById("dni").value;
+            let fc = document.getElementById("fc").value;
+            let fv = document.getElementById("fv").value;
+            var dnistr = 0;
 
+            for (let i = 0; i < dni.length; i++) {
+                dnistr = dnistr + 1;
+            }
 
-function getData() {
-       let dni = document.getElementById("dni").value;
-       let fc = document.getElementById("fc").value;
-       let fv = document.getElementById("fv").value;
-       var dnistr = 0;
-
-
-            /*Punto de contrl del dni*/
+            /* Punto de control del DNI */
             var dni0 = (dni[0] * 7);
             var dni1 = (dni[1] * 3);
             var dni2 = (dni[2] * 1);
@@ -157,29 +158,18 @@ function getData() {
             var dni5 = (dni[5] * 1);
             var dni6 = (dni[6] * 7);
             var dni7 = (dni[7] * 3);
-            var dni8 = (dni[8] * 1);
 
-            for (let i = 0; i < dni.length; i++) {
-                dnistr = dnistr + 1;
-            }
 
 
             console.log("funcion contar =", dnistr);
-
-            if (dnistr == 8) {
-                var control1 = dni0 + dni1 + dni2 + dni3 + dni4 + dni5 + dni6 + dni7 + dni8;
-            } else {
-                var control1 = dni0 + dni1 + dni2 + dni3 + dni4 + dni5 + dni6 + dni7;
-            }
-
-
+            var control1 = dni0 + dni1 + dni2 + dni3 + dni4 + dni5 + dni6 + dni7;
 
             var control1_1 = control1.toString();
             var control1_1_1 = control1_1.slice(-1);
             var control1n = Number(control1_1_1);
             var control1n1 = control1n * 7;
 
-            /*Punto del control de la fecha de nacimiento*/
+            /* Punto del control de la fecha de nacimiento */
             var fc0 = (fc[0] * 7);
             var fc1 = (fc[1] * 3);
             var fc2 = (fc[2] * 1);
@@ -187,7 +177,16 @@ function getData() {
             var fc4 = (fc[4] * 3);
             var fc5 = (fc[5] * 1);
 
+            var fc0_1 = (fc[0] * 3);
+            var fc1_2 = (fc[1] * 1);
+            var fc2_3 = (fc[2] * 7);
+            var fc3_4 = (fc[3] * 3);
+            var fc4_5 = (fc[4] * 1);
+            var fc5_6 = (fc[5] * 7);
+
             var control2 = fc0 + fc1 + fc2 + fc3 + fc4 + fc5;
+            var control2_2_2_2_2 = fc0_1 + fc1_2 + fc2_3 + fc3_4 + fc4_5 + fc5_6;
+
             /*console.log(control2);*/
             var control2_2 = control2.toString();
             var control2_2_2 = control2_2.slice(-1);
@@ -202,17 +201,33 @@ function getData() {
             var fv4 = (fv[4] * 3);
             var fv5 = (fv[5] * 1);
 
+            var fv0_1 = (fv[0] * 3);
+            var fv1_2 = (fv[1] * 1);
+            var fv2_3 = (fv[2] * 7);
+            var fv3_4 = (fv[3] * 3);
+            var fv4_5 = (fv[4] * 2);
+            var fv5_6 = (fv[5] * 7);
+
             var control3 = fv0 + fv1 + fv2 + fv3 + fv4 + fv5;
             /*console.log(control3);*/
             var control3_3 = control3.toString();
             var control3_3_3 = control3_3.slice(-1);
             var control3n = Number(control3_3_3);
             var control3n3 = control3n * 1;
-            /*Cuarto punto de control total*/
-            var control4 = control1 + control2 + control3 + control1n1 + control2n2 + control3n3;
+
+
+
+            /*Cuarto punto de control*/
+            // var control4 = control1 + control2 + control3 + 0 * 1 + control2n2 + control3n3;
+
+            var control4 = control1 + control1n1 + control2_2_2_2_2 + control2n2 + fv0_1 + fv1_2 + fv2_3 + fv3_4 + fv4_5 + fv5_6;
+            
             var control4_4 = control4.toString();
             var control4_4_4 = control4_4.slice(-1);
             var control4n = Number(control4_4_4);
+
+            console.error(control4_4_4)
+
 
             /*mostrar por consola*/
             console.log("El punto de control 1: " + control1n);
