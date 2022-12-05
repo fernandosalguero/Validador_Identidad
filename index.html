@@ -1,16 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validador de DNI</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Validador</title>
+    <!-- estilos -->
+    <style>
+h1{
+    color: yellowgreen;
+}
+    </style>
+
 </head>
+
+<!-- BODY CONTENIDO DE LA PÁGINA -->
 <body>
-    
-    <h1>Validador</h1>
-    <h4>laksjdlaskdjlsdjk</h4>
-    <script src="./validador.js"></script>
+<H1>validador</H1>
+<input type="text" id="dni" placeholder="Coloca el DNI del cliente" autocomplete="off"> <br> <br>
+<input type="text" id="fc" placeholder="Coloca la fecha de nacimiento del cliente" autocomplete="off"> <br> <br>
+<input type="text" id="fv" placeholder="Coloca la fecha de vencimiento del DNI" autocomplete="off"> <br> <br>
+<button onclick="getData()">Validar</button>
+
+
+
+
+
+<!-- SCRIPT -->
+<script>
+
+function getData(){
+    let dni = document.getElementById("dni").value;
+    let fc = document.getElementById("fc").value;
+    let fv = document.getElementById("fv").value;
+    console.log(dni);
+    console.log(fc);
+    console.log(fv);
+    for (let i = 0; i < dni.length; i++){
+        console.log(dni[i]);
+    }
+
+    var dni_multiplicado = dni1.slice(1)
+    var dni2 = dni1 * '7';
+    console.log(dni2);
+}
+
+</script>
 </body>
+
 </html>
