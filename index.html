@@ -106,19 +106,19 @@
 
     <div class="container">
         <section class="caja_form">
-            <input type="text" id="dni" placeholder="Coloca el DNI del cliente" autocomplete="off" class="input"
+            <input type="text" id="dni" placeholder="Coloca el DNI del cliente" autocomplete="off" class="input required"
                 maxlength="9"> <br> <br>
-            <input type="text" id="fc" placeholder="Coloca la fecha de nacimiento del cliente" class="input"
+            <input type="text" id="fc" placeholder="Coloca la fecha de nacimiento del cliente" class="input required"
                 autocomplete="off" maxlength="6"> <br> <br>
-            <input type="text" id="fv" placeholder="Coloca la fecha de vencimiento del DNI" class="input"
+            <input type="text" id="fv" placeholder="Coloca la fecha de vencimiento del DNI" class="input required"
                 autocomplete="off" maxlength="6"> <br> <br>
 
-            <div class="box" id="">
+            <!-- <div class="box" id="">
                 <select name="sexo" id="ocultar-mostrar" class="list">
                     <option value="m"> Mascullino</option>
                     <option value="f"> Femenino</option>
                 </select>
-            </div><br><br>
+            </div><br><br> -->
 
             <button onclick="getData()" class="boton">Validar</button>
         </section>
@@ -141,11 +141,11 @@
     <script>
 
 
-        function getData() {
-            let dni = document.getElementById("dni").value;
-            let fc = document.getElementById("fc").value;
-            let fv = document.getElementById("fv").value;
-            var dnistr = 0;
+function getData() {
+       let dni = document.getElementById("dni").value;
+       let fc = document.getElementById("fc").value;
+       let fv = document.getElementById("fv").value;
+       var dnistr = 0;
 
 
             /*Punto de contrl del dni*/
