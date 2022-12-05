@@ -201,12 +201,12 @@
             var fv4 = (fv[4] * 3);
             var fv5 = (fv[5] * 1);
 
-            var fv0_1 = (fv[0] * 3);
-            var fv1_2 = (fv[1] * 1);
-            var fv2_3 = (fv[2] * 7);
-            var fv3_4 = (fv[3] * 3);
-            var fv4_5 = (fv[4] * 2);
-            var fv5_6 = (fv[5] * 7);
+            var fv0_1 = (fv[0] * 1);
+            var fv1_2 = (fv[1] * 7);
+            var fv2_3 = (fv[2] * 3);
+            var fv3_4 = (fv[3] * 1);
+            var fv4_5 = (fv[4] * 7);
+            var fv5_6 = (fv[5] * 3);
 
             var control3 = fv0 + fv1 + fv2 + fv3 + fv4 + fv5;
             /*console.log(control3);*/
@@ -220,7 +220,7 @@
             /*Cuarto punto de control*/
             // var control4 = control1 + control2 + control3 + 0 * 1 + control2n2 + control3n3;
 
-            var control4 = control1 + control1n1 + control2_2_2_2_2 + control2n2 + fv0_1 + fv1_2 + fv2_3 + fv3_4 + fv4_5 + fv5_6;
+            var control4 = control1 + control1n1 + control2_2_2_2_2 + control2n2 + fv0_1 + fv1_2 + fv2_3 + fv3_4 + fv4_5 + fv5_6 + control3n3;
             
             var control4_4 = control4.toString();
             var control4_4_4 = control4_4.slice(-1);
