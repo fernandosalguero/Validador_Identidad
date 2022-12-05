@@ -10,116 +10,136 @@
 
     <!-- ESTILOS -->
     <style>
-
-        .container{
+        .container {
             text-align: center;
         }
 
-       .input{
-        padding: 0.375rem 0.75rem;
-        border: none;
-        outline: none;
-        background: #fff;
-        border-bottom: 2px solid #ccc;
-        border-radius: 0;
-        box-shadow: none;
-        text-align: center;
-        width: 250px;
-       }
+        .input {
+            padding: 0.375rem 0.75rem;
+            border: none;
+            outline: none;
+            background: #fff;
+            border-bottom: 2px solid #ccc;
+            border-radius: 0;
+            box-shadow: none;
+            text-align: center;
+            width: 300px;
+        }
 
 
-       .input:focus{
-        border-bottom: 2px solid rgb(0, 42, 255);
-       }
+        .input:focus {
+            border-bottom: 2px solid rgb(0, 42, 255);
+        }
 
-       .boton {
-text-decoration:none;
-font-weight: 600;
-font-size: 20px;
-color:#333333;
-padding-top:15px;
-padding-bottom:15px;
-padding-left:40px;
-padding-right:40px;
-background-color:#7dc0ff;
-border-color: #d8d8d8;
-border-width: 3px;
-border-style: solid;
-border-radius:35px;
-}
+        .boton {
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 20px;
+            color: #333333;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+            background-color: #7dc0ff;
+            border-color: #d8d8d8;
+            border-width: 3px;
+            border-style: solid;
+            border-radius: 35px;
+        }
 
 
-.box select {
-  background-color: #0563af;
-  color: white;
-  padding: 12px;
-  width: 250px;
-  border: none;
-  font-size: 20px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-  -webkit-appearance: button;
-  appearance: button;
-  outline: none;
-  border-radius: 15px;
-}
+        .box select {
+            background-color: #0563af;
+            color: white;
+            padding: 12px;
+            width: 250px;
+            border: none;
+            font-size: 20px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            -webkit-appearance: button;
+            appearance: button;
+            outline: none;
+            border-radius: 15px;
+        }
 
-.box::before {
-  content: "\f13a";
-  font-family: FontAwesome;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 20%;
-  height: 100%;
-  text-align: center;
-  font-size: 28px;
-  line-height: 45px;
-  color: rgba(255, 255, 255, 0.5);
-  background-color: rgba(255, 255, 255, 0.1);
-  pointer-events: none;
-}
+        .box::before {
+            content: "\f13a";
+            font-family: FontAwesome;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20%;
+            height: 100%;
+            text-align: center;
+            font-size: 28px;
+            line-height: 45px;
+            color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+        }
 
-.box:hover::before {
-  color: rgba(255, 255, 255, 0.6);
-  background-color: rgba(255, 255, 255, 0.2);
-}
+        .box:hover::before {
+            color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
 
-.box select option {
-  padding: 30px;
-}
-
+        .box select option {
+            padding: 30px;
+        }
     </style>
 
 </head>
+
+
+
+
+
+
+
+
+
+
 
 <!-- BODY CONTENIDO DE LA PÁGINA -->
 
 <body>
 
+    <div class="container">
+        <section class="caja_form">
+            <input type="text" id="dni" placeholder="Coloca el DNI del cliente" autocomplete="off" class="input"
+                maxlength="9"> <br> <br>
+            <input type="text" id="fc" placeholder="Coloca la fecha de nacimiento del cliente" class="input"
+                autocomplete="off" maxlength="6"> <br> <br>
+            <input type="text" id="fv" placeholder="Coloca la fecha de vencimiento del DNI" class="input"
+                autocomplete="off" maxlength="6"> <br> <br>
 
-<div class="container">
-    <section class="caja_form">
-        <input type="text" id="dni" placeholder="Coloca el DNI del cliente" autocomplete="off" class="input"
-            maxlength="9"> <br> <br>
-        <input type="text" id="fc" placeholder="Coloca la fecha de nacimiento del cliente" class="input"
-            autocomplete="off" maxlength="6"> <br> <br>
-        <input type="text" id="fv" placeholder="Coloca la fecha de vencimiento del DNI" class="input"
-            autocomplete="off" maxlength="6"> <br> <br>
-            <div class="box">
-                <select name="sexo" id="sexo" class="list">
+            <div class="box" id="">
+                <select name="sexo" id="ocultar-mostrar" class="list">
                     <option value="m"> Mascullino</option>
                     <option value="f"> Femenino</option>
-                </select> 
+                </select>
             </div><br><br>
 
-        <button onclick="getData()" class="boton">Validar</button>
-    </section>
-</div>
-    
+            <button onclick="getData()" class="boton">Validar</button>
+        </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!-- SCRIPT -->
     <script>
+
 
         function getData() {
             let dni = document.getElementById("dni").value;
@@ -143,7 +163,8 @@ border-radius:35px;
                 dnistr = dnistr + 1;
             }
 
-            console.log(dnistr);
+
+            console.log("funcion contar =", dnistr);
 
             if (dnistr == 8) {
                 var control1 = dni0 + dni1 + dni2 + dni3 + dni4 + dni5 + dni6 + dni7 + dni8;
