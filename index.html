@@ -106,12 +106,26 @@
 
     <div class="container">
         <section class="caja_form">
-            <input type="text" id="dni" placeholder="Coloca el DNI del cliente" autocomplete="off"
-                class="input required" maxlength="9"> <br> <br>
-            <input type="text" id="fc" placeholder="Coloca la fecha de nacimiento del cliente" class="input required"
-                autocomplete="off" maxlength="6"> <br> <br>
-            <input type="text" id="fv" placeholder="Coloca la fecha de vencimiento del DNI" class="input required"
-                autocomplete="off" maxlength="6"> <br> <br>
+            <label for="dni">DNI sin puntos</label>
+            <div>
+                <input type="text" id="dni" placeholder="Coloca el DNI del cliente" autocomplete="off"
+                    class="input required" maxlength="9" minlength="8"> <br> <br>
+
+            </div>
+
+            <label for="fc">aa mm dd</label>
+            <div>
+                <input type="text" id="fc" placeholder="Coloca la fecha de nacimiento del cliente"
+                    class="input required" autocomplete="off" maxlength="6" minlength="6"> <br> <br>
+
+            </div>
+
+            <label for="fc">aa mm dd</label>
+            <div>
+                <input type="text" id="fv" placeholder="Coloca la fecha de vencimiento del DNI" class="input required"
+                    autocomplete="off" maxlength="6" minlength="6"> <br> <br>
+
+            </div>
 
             <!-- <div class="box" id="">
                 <select name="sexo" id="ocultar-mostrar" class="list">
@@ -221,7 +235,7 @@
             // var control4 = control1 + control2 + control3 + 0 * 1 + control2n2 + control3n3;
 
             var control4 = control1 + control1n1 + control2_2_2_2_2 + control2n2 + fv0_1 + fv1_2 + fv2_3 + fv3_4 + fv4_5 + fv5_6 + control3n3;
-            
+
             var control4_4 = control4.toString();
             var control4_4_4 = control4_4.slice(-1);
             var control4n = Number(control4_4_4);
