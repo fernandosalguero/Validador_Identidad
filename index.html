@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Validador</title>
 
 
@@ -87,7 +88,7 @@
             padding: 30px;
         }
 
-        .lebel{
+        .lebel {
             color: #0563af;
         }
     </style>
@@ -251,6 +252,14 @@
             console.log("El punto de control 3: " + control3n);
             console.log("El punto de control 4: " + control4n);
             alert = ("El punto de control 1: " + control1n + "El punto de control 2: " + control2n + "El punto de control 3: " + control3n + "El punto de control 4: " + control4n)
+            Swal.fire({
+                title: '<div class="Importante">PUNTOS DE CONTROL</div>',
+                text: "El punto de control 1: " + control1n + "El punto de control 2:" + control2n +  "El punto de control 3: " + control3n + "El punto de control 4: " + control4n,
+                icon: "success",
+                confirmButtonText: 'Continuar',
+                background: '#D4E5EF',
+                confirmButtonColor: '#783F91',
+            });
 
         }
 
