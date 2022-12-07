@@ -88,7 +88,7 @@
             padding: 30px;
         }
 
-        .lebel {
+        .lebel{
             color: #0563af;
         }
     </style>
@@ -114,28 +114,28 @@
 
             <label for="dni" class="lebel">DNI sin puntos</label>
             <div>
-                <input type="text" id="dni" placeholder="Coloca el DNI del cliente" autocomplete="off"
+                <input type="text" id="dni" placeholder="Coloca el DNI del cliente (1)" autocomplete="off"
                     class="input required" maxlength="9" minlength="8"> <br> <br>
             </div>
 
             <label for="fc" class="lebel">Formato: aa mm dd</label>
             <div>
-                <input type="text" id="fc" placeholder="Coloca la fecha de nacimiento del cliente"
+                <input type="text" id="fc" placeholder="Coloca la fecha de nacimiento del cliente (2)"
                     class="input required" autocomplete="off" maxlength="6" minlength="6"> <br> <br>
             </div>
 
             <label for="fc" class="lebel"> Formato: aa mm dd</label>
             <div>
-                <input type="text" id="fv" placeholder="Coloca la fecha de vencimiento del DNI" class="input required"
+                <input type="text" id="fv" placeholder="Coloca la fecha de vencimiento del DNI (3)" class="input required"
                     autocomplete="off" maxlength="6" minlength="6"> <br> <br>
             </div>
 
-            <!-- <div class="box" id="">
-                <select name="sexo" id="ocultar-mostrar" class="list">
+            <div class="box" id="">
+                <select name="sexo" id="sexo" class="list">
                     <option value="m"> Mascullino</option>
                     <option value="f"> Femenino</option>
                 </select>
-            </div><br><br> -->
+            </div><br><br>
 
             <button onclick="getData()" class="boton">Validar</button>
         </section>
@@ -160,12 +160,181 @@
             let dni = document.getElementById("dni").value;
             let fc = document.getElementById("fc").value;
             let fv = document.getElementById("fv").value;
+            let sexo = document.getElementById("sexo").value;
             var dnistr = 0;
 
             for (let i = 0; i < dni.length; i++) {
                 dnistr = dnistr + 1;
             }
+            console.log("funcion contar =", dnistr);
 
+            if (dnistr<8) 
+            {
+                if (sexo=="m") {
+                    var dni0 = (22* 7);
+                    var dni1 = (dni[0] * 3);
+                    var dni2 = (dni[1] * 1);
+                    var dni3 = (dni[2] * 7);
+                    var dni4 = (dni[3] * 3);
+                    var dni5 = (dni[4] * 1);
+                    var dni6 = (dni[5] * 7);
+                    var dni7 = (dni[6] * 3);
+
+                    var control1 = dni0 + dni1 + dni2 + dni3 + dni4 + dni5 + dni6 + dni7; /*sumamos todos los resultados*/
+                    var control1_1 = control1.toString();
+                    var control1_1_1 = control1_1.slice(-1);
+                    var control1n = Number(control1_1_1);
+                    var control1n1 = control1n * 7; /*Primer punto de control*/
+
+                    /* Punto del control de la fecha de nacimiento */
+                    var fc0 = (fc[0] * 7);
+                    var fc1 = (fc[1] * 3);
+                    var fc2 = (fc[2] * 1);
+                    var fc3 = (fc[3] * 7);
+                    var fc4 = (fc[4] * 3);
+                    var fc5 = (fc[5] * 1);
+
+                    var fc0_1 = (fc[0] * 3);
+                    var fc1_2 = (fc[1] * 1);
+                    var fc2_3 = (fc[2] * 7);
+                    var fc3_4 = (fc[3] * 3);
+                    var fc4_5 = (fc[4] * 1);
+                    var fc5_6 = (fc[5] * 7);
+
+                    var control2 = fc0 + fc1 + fc2 + fc3 + fc4 + fc5;
+                    var control2_2_2_2_2 = fc0_1 + fc1_2 + fc2_3 + fc3_4 + fc4_5 + fc5_6;
+
+                    var control2_2 = control2.toString();
+                    var control2_2_2 = control2_2.slice(-1);
+                    var control2n = Number(control2_2_2);
+                    var control2n2 = control2n * 3;
+
+                    /*Punto de control 3 fecha de vencimeinto*/
+                    var fv0 = (fv[0] * 7);
+                    var fv1 = (fv[1] * 3);
+                    var fv2 = (fv[2] * 1);
+                    var fv3 = (fv[3] * 7);
+                    var fv4 = (fv[4] * 3);
+                    var fv5 = (fv[5] * 1);
+
+                    var fv0_1 = (fv[0] * 1);
+                    var fv1_2 = (fv[1] * 7);
+                    var fv2_3 = (fv[2] * 3);
+                    var fv3_4 = (fv[3] * 1);
+                    var fv4_5 = (fv[4] * 7);
+                    var fv5_6 = (fv[5] * 3);
+
+                    var control3 = fv0 + fv1 + fv2 + fv3 + fv4 + fv5;
+                    var control3_3 = control3.toString();
+                    var control3_3_3 = control3_3.slice(-1);
+                    var control3n = Number(control3_3_3);
+                    var control3n3 = control3n * 1;
+
+                    /*Cuarto punto de control*/
+
+                    var control4 = control1 + control1n1 + control2_2_2_2_2 + control2n2 + fv0_1 + fv1_2 + fv2_3 + fv3_4 + fv4_5 + fv5_6 + control3n3;
+                    var control4_4 = control4.toString();
+                    var control4_4_4 = control4_4.slice(-1);
+                    var control4n = Number(control4_4_4);
+
+                    /*mostrar por pántalla*/
+                    Swal.fire({
+                    title:'<div class="Importante">Los puntos de control son</div>',
+                    icon:"info",
+                    html:'<b>El punto de control 1 es: </b>' +control1n + '<br>'+
+                        '<b>El punto de control 2 es: </b>' +control2n + '<br>'+
+                        '<b>El punto de control 3 es: </b>' +control3n + '<br>'+
+                        '<b>El punto de control 4 es: </b>' +control4n + '<br>',
+
+                    confirmButtonText:'Continuar',
+                    background: '#D4E5EF',
+                    confirmButtonColor:'#783F91',
+            });
+                    
+                } else{
+                    var dni0 = (15* 7);
+                    var dni1 = (dni[0] * 3);
+                    var dni2 = (dni[1] * 1);
+                    var dni3 = (dni[2] * 7);
+                    var dni4 = (dni[3] * 3);
+                    var dni5 = (dni[4] * 1);
+                    var dni6 = (dni[5] * 7);
+                    var dni7 = (dni[6] * 3);
+
+                    var control1 = dni0 + dni1 + dni2 + dni3 + dni4 + dni5 + dni6 + dni7; /*sumamos todos los resultados*/
+                    var control1_1 = control1.toString();
+                    var control1_1_1 = control1_1.slice(-1);
+                    var control1n = Number(control1_1_1);
+                    var control1n1 = control1n * 7; /*Primer punto de control*/
+
+                    /* Punto del control de la fecha de nacimiento */
+                    var fc0 = (fc[0] * 7);
+                    var fc1 = (fc[1] * 3);
+                    var fc2 = (fc[2] * 1);
+                    var fc3 = (fc[3] * 7);
+                    var fc4 = (fc[4] * 3);
+                    var fc5 = (fc[5] * 1);
+
+                    var fc0_1 = (fc[0] * 3);
+                    var fc1_2 = (fc[1] * 1);
+                    var fc2_3 = (fc[2] * 7);
+                    var fc3_4 = (fc[3] * 3);
+                    var fc4_5 = (fc[4] * 1);
+                    var fc5_6 = (fc[5] * 7);
+
+                    var control2 = fc0 + fc1 + fc2 + fc3 + fc4 + fc5;
+                    var control2_2_2_2_2 = fc0_1 + fc1_2 + fc2_3 + fc3_4 + fc4_5 + fc5_6;
+
+                    var control2_2 = control2.toString();
+                    var control2_2_2 = control2_2.slice(-1);
+                    var control2n = Number(control2_2_2);
+                    var control2n2 = control2n * 3;
+
+                    /*Punto de control 3 fecha de vencimeinto*/
+                    var fv0 = (fv[0] * 7);
+                    var fv1 = (fv[1] * 3);
+                    var fv2 = (fv[2] * 1);
+                    var fv3 = (fv[3] * 7);
+                    var fv4 = (fv[4] * 3);
+                    var fv5 = (fv[5] * 1);
+
+                    var fv0_1 = (fv[0] * 1);
+                    var fv1_2 = (fv[1] * 7);
+                    var fv2_3 = (fv[2] * 3);
+                    var fv3_4 = (fv[3] * 1);
+                    var fv4_5 = (fv[4] * 7);
+                    var fv5_6 = (fv[5] * 3);
+
+                    var control3 = fv0 + fv1 + fv2 + fv3 + fv4 + fv5;
+                    var control3_3 = control3.toString();
+                    var control3_3_3 = control3_3.slice(-1);
+                    var control3n = Number(control3_3_3);
+                    var control3n3 = control3n * 1;
+
+                    /*Cuarto punto de control*/
+
+                    var control4 = control1 + control1n1 + control2_2_2_2_2 + control2n2 + fv0_1 + fv1_2 + fv2_3 + fv3_4 + fv4_5 + fv5_6 + control3n3;
+                    var control4_4 = control4.toString();
+                    var control4_4_4 = control4_4.slice(-1);
+                    var control4n = Number(control4_4_4);
+
+                    /*mostrar por pántalla*/
+                    Swal.fire({
+                    title:'<div class="Importante">Los puntos de control son</div>',
+                    icon:"info",
+                    html:'<b>El punto de control 1 es: </b>' +control1n + '<br>'+
+                        '<b>El punto de control 2 es: </b>' +control2n + '<br>'+
+                        '<b>El punto de control 3 es: </b>' +control3n + '<br>'+
+                        '<b>El punto de control 4 es: </b>' +control4n + '<br>',
+
+                    confirmButtonText:'Continuar',
+                    background: '#D4E5EF',
+                    confirmButtonColor:'#783F91',
+            });
+                    
+                }    
+            } else {
+            
             /* Punto de control del DNI */
             var dni0 = (dni[0] * 7);
             var dni1 = (dni[1] * 3);
@@ -178,7 +347,6 @@
 
 
 
-            console.log("funcion contar =", dnistr);
             var control1 = dni0 + dni1 + dni2 + dni3 + dni4 + dni5 + dni6 + dni7;
 
             var control1_1 = control1.toString();
@@ -204,7 +372,6 @@
             var control2 = fc0 + fc1 + fc2 + fc3 + fc4 + fc5;
             var control2_2_2_2_2 = fc0_1 + fc1_2 + fc2_3 + fc3_4 + fc4_5 + fc5_6;
 
-            /*console.log(control2);*/
             var control2_2 = control2.toString();
             var control2_2_2 = control2_2.slice(-1);
             var control2n = Number(control2_2_2);
@@ -226,7 +393,6 @@
             var fv5_6 = (fv[5] * 3);
 
             var control3 = fv0 + fv1 + fv2 + fv3 + fv4 + fv5;
-            /*console.log(control3);*/
             var control3_3 = control3.toString();
             var control3_3_3 = control3_3.slice(-1);
             var control3n = Number(control3_3_3);
@@ -235,32 +401,27 @@
 
 
             /*Cuarto punto de control*/
-            // var control4 = control1 + control2 + control3 + 0 * 1 + control2n2 + control3n3;
 
             var control4 = control1 + control1n1 + control2_2_2_2_2 + control2n2 + fv0_1 + fv1_2 + fv2_3 + fv3_4 + fv4_5 + fv5_6 + control3n3;
-
             var control4_4 = control4.toString();
             var control4_4_4 = control4_4.slice(-1);
             var control4n = Number(control4_4_4);
 
-            console.error(control4_4_4)
-
-
-            /*mostrar por consola*/
-            console.log("El punto de control 1: " + control1n);
-            console.log("El punto de control 2: " + control2n);
-            console.log("El punto de control 3: " + control3n);
-            console.log("El punto de control 4: " + control4n);
-            alert = ("El punto de control 1: " + control1n + "El punto de control 2: " + control2n + "El punto de control 3: " + control3n + "El punto de control 4: " + control4n)
+        /*mostrar por pántalla*/
             Swal.fire({
-                title: '<div class="Importante">PUNTOS DE CONTROL</div>',
-                html: "El punto de control 1: " + control1n + "<br>" + "El punto de control 2: " + control2n + "<br>" +  "El punto de control 3: " + control3n + "<br>" + "El punto de control 4: " + control4n,
-                icon: "success",
-                confirmButtonText: 'Continuar',
-                background: '#D4E5EF',
-                confirmButtonColor: '#783F91',
-            });
+            title:'<div class="Importante">Los puntos de control son</div>',
+            icon:"info",
+            html:'<b>El punto de control 1 es: </b>' +control1n + '<br>'+
+                '<b>El punto de control 2 es: </b>' +control2n + '<br>'+
+                '<b>El punto de control 3 es: </b>' +control3n + '<br>'+
+                '<b>El punto de control 4 es: </b>' +control4n + '<br>',
 
+            confirmButtonText:'Continuar',
+            background: '#D4E5EF',
+            confirmButtonColor:'#783F91',
+    });
+        }
+            
         }
 
     </script>
